@@ -22,7 +22,7 @@
 					<li id="li_1" >
 		<label class="description" for="element_1">Username </label>
 		<div>
-			<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" required/> 
 		</div> 
 		</li>		<li id="li_2" >
 		<label class="description" for="element_2">Password </label>
