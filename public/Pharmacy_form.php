@@ -3,13 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
-<link rel="stylesheet" type="text/css" href="view.css" media="all">
-<script type="text/javascript" src="view.js"></script>
+<link rel="stylesheet" type="text/css" href="assets\forms_assets\view.css" media="all">
+<script type="text/javascript" src="assets\forms_assets\view.js"></script>
 
 </head>
 <body id="main_body" >
 	
-	<img id="top" src="top.png" alt="">
+	<img id="top" src="assets\forms_assets\top.png" alt="">
 	<div id="form_container">
 	
 		<h1><a></a></h1>
@@ -79,6 +79,6 @@
 			</ul>
 		</form>	
 	</div>
-	<img id="bottom" src="bottom.png" alt="">
+	<img id="bottom" src="assets\forms_assets\bottom.png" alt="">
 	</body>
 </html>
