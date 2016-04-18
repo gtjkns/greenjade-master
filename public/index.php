@@ -39,7 +39,8 @@
 						<div class="inner">
 							<div class="logo"><span class="icon fa-diamond"></span></div>
 							<h2>Team Green Thinkers</h2>
-							<p>We connect doctors, patients, pharmecies and local industries to analyze the impact of climate change on public health</p>
+							<p>We design a crowdsource scheme to connect doctors, patients and pharmecies
+							 to analyze the impact of climate change on public health</p>
 						</div>
 					</section>
 
@@ -49,10 +50,11 @@
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+									
 									<div class="content">
-										<h2 class="major">Last but not the least</h2>
-										<p>Going from hospital to hospital, no seats, no doctors. We help you to find the best hospital where you can save your loved ones and give them them the best treatment in no time.</p>
+										<h2 class="major">Heal the world</h2>
+										<p>Nature saves us from harmful impact of environment as we progress. We harm our world causing threat to our next generations. We illustrate the environmental impact by NASA GIBS mapping and compare it to the symptom frequency mapping to aware people about environmental hazards.</p>
 										<!--<a href="#" class="special">Learn more</a>-->
 									</div>
 								</div>
@@ -63,8 +65,8 @@
 								<div class="inner">
 									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Recording Medical Information Connecting People Alike</h2>
-										<p>An approach to help people connect to doctors home and abroad and patients alike. We collect information for helping doctors in developing country as they urge for historical medical information.</p>
+										<h2 class="major">Recording Medical Information Connecting Similar Patients</h2>
+										<p>An approach to help people connect to doctors home and abroad and similar patients. We help doctors in a developing country by providing them historical medical information.</p>
 										<!--<a href="#" class="special">Learn more</a>-->
 									</div>
 								</div>
@@ -73,10 +75,10 @@
 						<!-- Three -->
 							<section id="three" class="wrapper spotlight style3">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Heal the world</h2>
-										<p>Mother nature saves us from harmful impact of environment but as we progress. We harm our world causing threat to our next generations. We illustrate the environmental impact by NASA GIBS mapping and compare it by symptom frequency mapping to aware people about environmental condition.</p>
+										<h2 class="major">Last but not the least</h2>
+										<p>We help you find the best doctor or hospital who can provide you the best treatment.</p>
 										<!--<a href="#" class="special">Learn more</a>-->
 									</div>
 								</div>

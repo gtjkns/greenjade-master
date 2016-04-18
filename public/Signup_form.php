@@ -1,5 +1,5 @@
 <?php require_once("../include/db_connect.php"); ?>
-<?php require_once("../include/functions.php"); ?> 
+<?php include ("../include/functions.php"); ?> 
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -17,7 +17,7 @@
 	<div id="form_container">
 	
 		<h1><a>Sign up</a></h1>
-		<form id="form_1123733" class="appnitro"  method="post" action="">
+		<form id="form_1123733" class="appnitro"  method="post" action="	">
 					<div class="form_description">
 			<h2>Sign up</h2>
 			</div>						
@@ -91,8 +91,7 @@
 		</li>		<li id="li_9" >
 		<label class="description" for="element_9">Country </label>
 		
-		<?php// $country = find_country(); ?>
-		
+		<?php $country = find_country(); ?>
 
 		<div>
 		<select class="element select medium" id="element_9" name="element_9" required> 
