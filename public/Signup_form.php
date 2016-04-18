@@ -18,6 +18,15 @@ function find_country(){
 	return $country;
 }
 
+function find_city(){
+	global $connection;
+	$query = "SELECT id, country from pdhp_country ORDER BY country";
+	$country = mysqli_query($connection, $query);
+	confirm_query($country);
+
+	return $country;
+}
+
 ?>
 
 
@@ -117,10 +126,12 @@ function find_country(){
 		<div>
 		<select class="element select medium" id="element_9" name="element_9" required> 
 			<option value="1" selected="selected"></option>
-			  <?php while ($item = mysqli_fetch_assoc($result)) { ?>
-   				<option value=<?php echo $row['id']?>><?php echo $row['country']?> </option>
-   			<?php } ?>
-
+			  <?php 
+			  	while ( $data=mysqli_fetch_assoc($country)) {
+ 					 echo "<option value='{".$data['country']."}'>".$data['country']."</option>";
+				}
+			  ?>
+ 
 		</select>
 		</div> 
 		</li>		<li id="li_10" >
