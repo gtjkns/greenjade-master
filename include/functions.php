@@ -5,7 +5,7 @@ function confirm_query($result_set){
 	}
 }
 
-function find_countries(){
+function find_country(){
 	global $connection;
 	$query = "SELECT id, country from pdhp_country ORDER BY country";
 	$country = mysqli_query($connection, $query);
@@ -13,5 +13,7 @@ function find_countries(){
 
 	return $country;
 }
+
+
 
 ?>

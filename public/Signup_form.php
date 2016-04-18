@@ -1,5 +1,6 @@
-<?php require_once("../includes/db_connect.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
+<?php require_once("../include/db_connect.php"); ?>
+<?php require_once("../include/functions.php"); ?> 
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -90,7 +91,8 @@
 		</li>		<li id="li_9" >
 		<label class="description" for="element_9">Country </label>
 		
-		<?php $countries = find_countries(); ?>
+		<?php// $country = find_country(); ?>
+		
 
 		<div>
 		<select class="element select medium" id="element_9" name="element_9" required> 
