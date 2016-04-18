@@ -1,5 +1,25 @@
-<?php require_once("../include/db_connect.php"); ?>
-<?php include ("../include/functions.php"); ?> 
+<?php
+	require_once("db_connect.php");
+?>
+<?php 
+
+function confirm_query($result_set){
+		if(!$result_set) {
+			die("Database Query Failed.");
+	}
+}
+
+function find_country(){
+	global $connection;
+	$query = "SELECT id, country from pdhp_country ORDER BY country";
+	$country = mysqli_query($connection, $query);
+	confirm_query($country);
+
+	return $country;
+}
+
+?>
+
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -90,8 +110,9 @@
 		</span> 
 		</li>		<li id="li_9" >
 		<label class="description" for="element_9">Country </label>
-		
-		<?php $country = find_country(); ?>
+
+		<?php 
+		$country = find_country(); ?>
 
 		<div>
 		<select class="element select medium" id="element_9" name="element_9" required> 
