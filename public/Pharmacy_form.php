@@ -1,3 +1,8 @@
+<?php 
+	require_once("../include/db_connect.php");
+	require_once("../include/function.php");
+
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,56 +17,65 @@
 	<img id="top" src="assets\forms_assets\top.png" alt="">
 	<div id="form_container">
 	
-		<h1><a></a></h1>
-		<form id="form_1123909" class="appnitro"  method="post" action="">
-									
+	<h1><a>Pharmacy Form</a></h1>
+		<form id="form_1123733" class="appnitro"  method="post" action="verify_email.php">
+					<div class="form_description">
+			<h2>Pharmacy Form</h2>
+			</div>	
 			<ul >
 			
 					<li id="li_1" >
 		<label class="description" for="element_1">Name </label>
 		<div>
-			<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" required/> 
 		</div> 
 		</li>		<li id="li_2" >
 		<label class="description" for="element_2">Email </label>
 		<div>
-			<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="element_2" name="element_2" class="element text medium" type="email" maxlength="255" value="" required/> 
 		</div> 
 		</li>		<li id="li_3" >
 		<label class="description" for="element_3">Phone </label>
 		<span>
-			<input id="element_3_1" name="element_3_1" class="element text" size="3" maxlength="3" value="" type="text"> -
+			<input id="element_3_1" name="element_3_1" class="element text" size="3" maxlength="3" value="" type="text" required> -
 			<label for="element_3_1">(###)</label>
 		</span>
 		<span>
-			<input id="element_3_2" name="element_3_2" class="element text" size="3" maxlength="3" value="" type="text"> -
+			<input id="element_3_2" name="element_3_2" class="element text" size="3" maxlength="3" value="" type="text" required> -
 			<label for="element_3_2">###</label>
 		</span>
 		<span>
-	 		<input id="element_3_3" name="element_3_3" class="element text" size="4" maxlength="4" value="" type="text">
+	 		<input id="element_3_3" name="element_3_3" class="element text" size="4" maxlength="4" value="" type="text" required>
 			<label for="element_3_3">####</label>
 		</span>
 		 
 		</li>		<li id="li_4" >
 		<label class="description" for="element_4">Registration number (To be verified) </label>
 		<div>
-			<input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value="" required/> 
 		</div> 
-		</li>		<li id="li_5" >
+		</li>
+		<?php 
+			$country = find_country(); 
+			
+		?>
+				<li id="li_5" >
 		<label class="description" for="element_5">Country </label>
 		<div>
-		<select class="element select medium" id="element_5" name="element_5"> 
-			<option value="" selected="selected"></option>
-<option value="1" >First option</option>
-<option value="2" >Second option</option>
-<option value="3" >Third option</option>
+		<select class="element select medium" id="element_5" name="element_5" required> 
+			<option value="" selected="selected">------Select Country------</option>
+			  <?php 
+			  	while ( $data = mysqli_fetch_assoc($country)) {
+ 					 echo "<option value='{".$data['id']."}'>".$data['country']."</option>";
+				}
+			  ?>
 
 		</select>
 		</div> 
 		</li>		<li id="li_6" >
 		<label class="description" for="element_6">City </label>
 		<div>
-		<select class="element select medium" id="element_6" name="element_6"> 
+		<select class="element select medium" id="element_6" name="element_6" required> 
 			<option value="" selected="selected"></option>
 <option value="1" >First option</option>
 <option value="2" >Second option</option>

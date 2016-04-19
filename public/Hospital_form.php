@@ -1,3 +1,8 @@
+<?php 
+	require_once("../include/db_connect.php");
+	require_once("../include/function.php");
+
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -19,27 +24,43 @@
 			<p></p>
 		</div>						
 			<ul >
+				<?php 
+			$country = find_country(); 
+			
+		?>
 			
 					<li id="li_1" >
-		<label class="description" for="element_1">Name of Hospital </label>
+		<label class="description" for="name">Name of Hospital </label>
 		<div>
-			<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="name" name="name" class="element text medium" type="text" maxlength="255" value="" required/> 
+		</div> 
+		</li>		<li id="li_3" >
+		<label class="description" for="username">User Name </label>
+		<div>
+			<input id="username" name="username" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_3" >
+		<label class="description" for="password">Password </label>
+		<div>
+			<input id="password" name="password" class="element text medium" type="password" maxlength="255" value=""/> 
 		</div> 
 		</li>		<li id="li_4" >
-		<label class="description" for="element_4">Country </label>
+		<label class="description" for="country">Country </label>
 		<div>
-		<select class="element select medium" id="element_4" name="element_4"> 
-			<option value="" selected="selected"></option>
-<option value="1" >First option</option>
-<option value="2" >Second option</option>
-<option value="3" >Third option</option>
+		<select class="element select medium" id="country" name="country" required> 
+				<option value="" selected="selected">------Select Country------</option>
+			  <?php 
+			  	while ( $data = mysqli_fetch_assoc($country)) {
+ 					 echo "<option value='{".$data['id']."}'>".$data['country']."</option>";
+				}
+			  ?>
 
 		</select>
 		</div> 
 		</li>		<li id="li_5" >
 		<label class="description" for="element_5">City\State </label>
 		<div>
-		<select class="element select medium" id="element_5" name="element_5"> 
+		<select class="element select medium" id="city" name="city" required> 
 			<option value="" selected="selected"></option>
 <option value="1" >First option</option>
 <option value="2" >Second option</option>
@@ -48,16 +69,16 @@
 		</select>
 		</div> 
 		</li>		<li id="li_2" >
-		<label class="description" for="element_2">Email (Official) </label>
+		<label class="description" for="email">Email (Official) </label>
 		<div>
-			<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="element_2" name="email" class="element text medium" type="email" maxlength="255" value="" required/> 
 		</div> 
 		</li>		<li id="li_3" >
-		<label class="description" for="element_3">Web Site (Official) </label>
+		<label class="description" for="web">Web Site (Official) </label>
 		<div>
-			<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value="http://"/> 
+			<input id="element_3" name="web" class="element text medium" type="text" maxlength="255" value="http://"/> 
 		</div> 
-		</li>
+		</li> 
 			
 					<li class="buttons">
 			    <input type="hidden" name="form_id" value="1123733" />

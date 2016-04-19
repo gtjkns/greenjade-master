@@ -38,7 +38,7 @@
 					<section id="banner">
 						<div class="inner">
 							<div class="logo"><span class="icon fa-diamond"></span></div>
-							<h2>Team Green Thinkers</h2>
+							<h2>Green Jade</h2>
 							<p>We design a crowdsource scheme to connect doctors, patients and pharmecies
 							 to analyze the impact of climate change on public health</p>
 						</div>

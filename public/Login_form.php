@@ -1,3 +1,8 @@
+<?php 
+	require_once("../include/db_connect.php");
+	require_once("../include/function.php");
+
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -27,7 +32,7 @@
 		</li>		<li id="li_2" >
 		<label class="description" for="element_2">Password </label>
 		<div>
-			<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value="" required/> 
+			<input id="element_2" name="element_2" class="element text medium" type="password" maxlength="255" value="" required/> 
 		</div> 
 		</li>
 			
