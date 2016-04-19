@@ -18,24 +18,36 @@
 	<div id="form_container">
 	
 		<h1><a>Login Form</a></h1>
-		<form id="form_1123733" class="appnitro"  method="post" action="">
+		<form id="form_1123733" class="appnitro"  method="post" action="validateuser.php">
 					<div class="form_description">
 			<h2>Log in</h2>
 		</div>						
 			<ul >
 			
 					<li id="li_1" >
-		<label class="description" for="element_1">Username or Email </label>
+		<label class="description" for="username">Username or Email </label>
 		<div>
-			<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" required/> 
+			<input id="user" name="user" class="element text medium" type="text" maxlength="255" value="" required/> 
 		</div> 
 		</li>		<li id="li_2" >
-		<label class="description" for="element_2">Password </label>
+		<label class="description" for="pass">Password </label>
 		<div>
-			<input id="element_2" name="element_2" class="element text medium" type="password" maxlength="255" value="" required/> 
+			<input id="pass" name="pass" class="element text medium" type="password" maxlength="255" value="" required/> 
+		</div> 
+		</li> 		<li id="li_2" >
+		<label class="description" for="pass">Account Type </label>
+		<div>
+			<Select class="element select medium" required>
+				<option name="" value="">Select Type</option>
+				<option name="type" value="Patient">Patient</option>
+				<option name="type" value="Doctor">Doctor</option>
+				<option name="type" value="Hospital">Hospital</option>
+				<option name="type" value="Pharmacy">Pharmacy</option>
+			</Select>
 		</div> 
 		</li>
-			
+
+
 					<li class="buttons">
 			    <input type="hidden" name="form_id" value="1123733" />
 			    

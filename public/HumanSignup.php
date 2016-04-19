@@ -1,33 +1,50 @@
 <?php 
 	require_once("../include/db_connect.php");
 	require_once("../include/function.php");
-	function mysql_prep($string){
-		global $connection;
-		$escaped_string = mysqli_real_escape_string($connection, $string);
-		return $escaped_string;
-	}
+	
+	
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$email = $_POST['email'];
 	$first_name = $_POST['first_name'];
 	$last_name = $_POST['last_name'];
-	$dob = $_POST['yyyy'] ."-" . $_POST['mm'] . "-" .$_POST['dd'];
-	$gender = $_POST['gender']
+	$dob = $_POST['dob'];
+	$dob = date("Y-m-d", strtotime($dob));
+	$gender = $_POST['gender'];
 	$cid = $_POST['country'];
 	$sid = $_POST['city'];
 	$s_s_n = $_POST['s_s_n'];
 	$i_n = $_POST['i_n'];
 
+	global $connection;
 
-	if(isset($_POST['patient_radio'])){
-		$insert = "INSERT INTO pdhp_patient(username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES ($username, $password, $email, $first_name, $last_name, $dob, $gender, $s_s_n, $i_n);"
-	}else if(isset($POST['doctor_radio'])){
-		$insert = "INSERT INTO pdhp_doctor(username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES ($username, $password, $email, $first_name, $last_name, $dob, $gender, $s_s_n, $i_n)";
 
-	}else if(isset($_POST['environment_radio'])){
-		$insert = "INSERT INTO pdhp_environmentalist(username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES ($username, $password, $email, $first_name, $last_name, $dob, $gender, $s_s_n, $i_n)";
+
+	if(isset($_POST['type']) && $_POST['type']==="patient"){
+		$insert = "INSERT INTO pdhp_patient (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES ('$username', '$password', '$email', '$first_name', '$last_name', '$dob', '$gender', '$s_s_n', '$i_n');";
+		
+		$insert = mysql_prep($insert);
+		$result = mysqli_query($connection, $insert); 
+		
+	}elseif(isset($_POST['type']) && $_POST['type']==="doctor"){
+		$insert = "INSERT INTO pdhp_patient (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES ('$username', '$password', '$email', '$first_name', '$last_name', '$dob', '$gender', '$s_s_n', '$i_n');";
+		$insert = mysql_prep($insert);
+		$result = mysqli_query($connection, $insert);
+
+	}elseif(isset($_POST['environment_radio']) && $_POST['type']==="environment"){
+		$insert = "INSERT INTO pdhp_patient (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES ('$username', '$password', '$email', '$first_name', '$last_name', '$dob', '$gender', '$s_s_n', '$i_n');";
+		$insert = mysql_prep($insert);
+		$result = mysqli_query($connection, $insert);
 	}
 
-	redirect_to("verify_email.php");
+
+		if ( $result === false ) {    
+			echo $insert;
+			echo mysqli_error($connection);
+		    exit;
+		}else{
+			redirect("Login_form.php");
+		}
+	
 
  ?>

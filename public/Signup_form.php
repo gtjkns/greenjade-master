@@ -52,42 +52,21 @@
 			<label>Last</label>
 		</span> 
 		</li>		<li id="li_5" >
-		<label class="description" for="element_5">Date of Birth </label>
+		<label class="description" for="date">Date of Birth </label>
 		<span>
-			<input id="mm" name="mm" class="element text" size="2" maxlength="2" value="" type="text" required> /
-			<label for="mm">MM</label>
+			<input id="dob" name="dob" class="element text" width="30px" value="" type="date" placeholder="MM/DD//YYYY" required>
+
 		</span>
-		<span>
-			<input id="dd" name="dd" class="element text" size="2" maxlength="2" value="" type="text" required> /
-			<label for="dd">DD</label>
-		</span>
-		<span>
-	 		<input id="yyyy" name="yyyy" class="element text" size="4" maxlength="4" value="" type="text" required>
-			<label for="yyyy">YYYY</label>
-		</span>
-	
-		<span id="calendar_5">
-			<img id="cal_img_5" class="datepicker" src="assets/forms_assets/calendar.gif" alt="Pick a date.">	
-		</span>
-		<script type="text/javascript">
-			Calendar.setup({
-			inputField	 : "element_5_3",
-			baseField    : "element_5",
-			displayArea  : "calendar_5",
-			button		 : "cal_img_5",
-			ifFormat	 : "%B %e, %Y",
-			onSelect	 : selectDate
-			});
-		</script>
+
 		 
 		</li>		<li id="gender" >
 		<label class="description" for="gender">Gender </label>
 		<span>
-			<input id="male" name="male" class="element radio" type="radio" value="1" required/>
+			<input id="male" name="gender" class="element radio" type="radio" value="male" />
 <label class="choice" for="male">Male</label>
-<input id="element_8_2" name="female" class="element radio" type="radio" value="2" required />
+<input id="element_8_2" name="gender" class="element radio" type="radio" value="female"  />
 <label class="choice" for="female">Female</label>
-<input id="element_8_3" name="other" class="element radio" type="radio" value="3" required/>
+<input id="element_8_3" name="gender" class="element radio" type="radio" value="other" />
 <label class="choice" for="other">Other</label>
 
 		</span> 
@@ -127,16 +106,16 @@
 		</li>		<li id="li_10" >
 		<label class="description" for="city">City/State </label>
 		<div>
-		<select class="element select medium" id="city" name="city" required>
+		<select class="element select medium" id="city" name="city" >
 			<option value="" selected="selected">-----Select City-----</option>
 			<?php 
-				if(isset($_POST["country"])){				
+				//if(isset($_POST["country"])){				
 					$city = find_city($_POST["country"]);  
 
 				  	while ( $data = mysqli_fetch_assoc($city)) {
 							 echo "<option value='{".$data['id']."}'>".$data['name']."</option>";
 					}
-				}
+				//}
 				
 			  ?>
 
@@ -145,23 +124,22 @@
 		</li>		<li id="s_s_n" >
 		<label class="description" for="s_s_n">Social Security Number </label>
 		<div>
-			<input id="element_6" name="s_s_n" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="element_6" name="s_s_n" class="element text medium" type="text" minlength="9" maxlength="9"  value=""/> 
 		</div> 
 		</li>		<li id="i_n" >
 		<label class="description" for="i_n">Insurance Number </label>
 		<div>
-			<input id="i_n" name="i_n" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="i_n" name="i_n" class="element text medium" type="text" minlength="9" maxlength="9"  value=""/> 
 		</div> 
 		</li>		<li id="li_8" >
 		<label class="description" for="element_8">Are you a: </label>
 		<span>
-			<input id="patient" name="patient_radio" class="element radio" type="radio" value="1" required/>
-			<label class="choice" for="patient_radio">Patient</label>
-			<input id="doctor" name="doctor_radio" class="element radio" type="radio" value="2" required/>
-			<label class="choice" for="doctor_radio">Doctor</label>
-			<input id="doctor" name="environment_radio" class="element radio" type="radio" value="3" required/>
-			<label class="choice" for="element_8_2">Environmental Scientist</label>
-
+			<input id="patient" name="type" class="element radio" type="radio" value="patient" required/>
+			<label class="choice" for="patient">Patient</label>
+			<input id="doctor" name="type" class="element radio" type="radio" value="doctor" required/>
+			<label class="choice" for="doctor">Doctor</label>
+			<input id="environment" name="type" class="element radio" type="radio" value="environment" required/>
+			<label class="choice" for="environment">Environmental Scientist</label>
 
 		</span> 
 		</li>		
