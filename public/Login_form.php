@@ -29,6 +29,20 @@
 		<div>
 			<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value="" required/> 
 		</div> 
+		</li>		<li id="li_2" >
+		<label class="description" for="element_2">Account type </label>
+		<div>
+		<select class="element select medium" id="element_2" name="element_2"> 
+			<option value="" selected="selected"></option>
+				<option value="1" >Patient</option>
+				<option value="2" >Doctor</option>
+				<option value="3" >Hospital</option>
+				<option value="4" >Pharmacy</option>
+				<option value="5" >Environmental Scientist</option>
+				<option value="6" >Guest</option>
+
+		</select>
+		</div> 
 		</li>
 			
 					<li class="buttons">

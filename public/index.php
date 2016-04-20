@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Green Thinkers</title>
+		<title>Green Jade</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -16,7 +16,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Green Thinkers</a></h1>
+						<h1><a href="index.html">Green Jade</a></h1>
 						<nav>
 							<a href="#menu">Log In</a>
 						</nav>
@@ -38,7 +38,7 @@
 					<section id="banner">
 						<div class="inner">
 							<div class="logo"><span class="icon fa-diamond"></span></div>
-							<h2>Team Green Thinkers</h2>
+							<h2>Project Green Jade</h2>
 							<p>We design a crowdsource scheme to connect doctors, patients and pharmecies
 							 to analyze the impact of climate change on public health</p>
 						</div>
