@@ -34,7 +34,7 @@
 
 		
 	}else if(isset($_POST['submit']) && $_POST['type']==="doctor"){
-		$insert = "INSERT INTO pdhp_patient (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES (\"$username\", \"$password\", \"$email\", \"$first_name\", \"$last_name\", \"$dob\", \"$gender\", \"$s_s_n\", \"$i_n\")";
+		$insert = "INSERT INTO pdhp_doctor (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES (\"$username\", \"$password\", \"$email\", \"$first_name\", \"$last_name\", \"$dob\", \"$gender\", \"$s_s_n\", \"$i_n\")";
 
 		$result = mysqli_query($connection, $insert);
 
