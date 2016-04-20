@@ -18,33 +18,47 @@
 
 	global $connection;
 
+	echo"<pre>";
+		print_r($_POST);
+	echo"</pre>";
 
+	if(isset($_POST['submit']) && $_POST['type']==="patient"){
+		$insert = "INSERT INTO pdhp_patient (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES (\"$username\", \"$password\", \"$email\", \"$first_name\", \"$last_name\", \"$dob\", \"$gender\", \"$s_s_n\", \"$i_n\")";
+		//$insert = "INSERT INTO pdhp_patient (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES ('joy','isjl', 'jaysen110@gmail.com', 'joy', 'sen', '1996-6-1', 'male', '156545658', '156545898')";
+			
+		//$insert = mysql_prep($connection, $insert);
+		//$insert = mysqli_real_escape_string($connection, $insert);
 
-	if(isset($_POST['type']) && $_POST['type']==="patient"){
-		$insert = "INSERT INTO pdhp_patient (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES ('$username', '$password', '$email', '$first_name', '$last_name', '$dob', '$gender', '$s_s_n', '$i_n');";
+		$result = mysqli_query($connection, $insert);
 		
-		$insert = mysql_prep($insert);
-		$result = mysqli_query($connection, $insert); 
+
 		
-	}elseif(isset($_POST['type']) && $_POST['type']==="doctor"){
-		$insert = "INSERT INTO pdhp_patient (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES ('$username', '$password', '$email', '$first_name', '$last_name', '$dob', '$gender', '$s_s_n', '$i_n');";
-		$insert = mysql_prep($insert);
+	}else if(isset($_POST['submit']) && $_POST['type']==="doctor"){
+		$insert = "INSERT INTO pdhp_patient (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES (\"$username\", \"$password\", \"$email\", \"$first_name\", \"$last_name\", \"$dob\", \"$gender\", \"$s_s_n\", \"$i_n\")";
+
 		$result = mysqli_query($connection, $insert);
 
-	}elseif(isset($_POST['environment_radio']) && $_POST['type']==="environment"){
-		$insert = "INSERT INTO pdhp_patient (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES ('$username', '$password', '$email', '$first_name', '$last_name', '$dob', '$gender', '$s_s_n', '$i_n');";
+		echo $insert . "<br >";
+		if($result){
+			echo "Done";
+		}else{
+			echo "Not Done";
+		}
+
+	}else if(isset($_POST['submit']) && $_POST['type']==="environment"){
+		$insert = "INSERT INTO pdhp_patient (username, password, email, first_name, last_name, dob, gender, s_s_n, i_n) VALUES (\"$username\", \"$password\", \"$email\", \"$first_name\", \"$last_name\", \"$dob\", \"$gender\", \"$s_s_n\", \"$i_n\")";
 		$insert = mysql_prep($insert);
 		$result = mysqli_query($connection, $insert);
 	}
 
 
-		if ( $result === false ) {    
-			echo $insert;
-			echo mysqli_error($connection);
-		    exit;
-		}else{
-			redirect("Login_form.php");
-		}
-	
+		// if ( $result === false ) {    
+		// 	echo $insert;
+		// 	echo mysqli_error($connection);
+		//     exit;
+		// }else{
+		// 	redirect("Login_form.php");
+		// }
+
 
  ?>
