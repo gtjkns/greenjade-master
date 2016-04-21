@@ -87,7 +87,7 @@
 						<!-- Four -->
 							<section id="four" class="wrapper alt style1">
 								<div class="inner">
-									<h2 class="major">Who we are</h2>
+									<h2 class="major">About us</h2>
 									<section class="features">
 										<article>
 											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
@@ -129,6 +129,12 @@
 							<form method="post" action="Pharmacy_form.php">
 								<ul class="actions">
 									<li><input type="submit" value="Pharmacy" /></li>
+								</ul>
+							</form><br><br>
+							<br>
+							<form method="post" action="../map/start.htm">
+								<ul class="actions">
+									<li><input type="submit" value="Envoronmental scientist" /></li>
 								</ul>
 							</form>
 							<!--<ul class="contact">
